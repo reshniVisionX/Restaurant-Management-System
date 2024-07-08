@@ -1,0 +1,86 @@
+.history{
+   margin-top: 50px;
+ /* background-image: url('https://i.pinimg.com/564x/fe/ec/40/feec4059d4fc4e2c941c2622f1b5ca48.jpg');
+        background-repeat: no-repeat; 
+        background-attachment: fixed;
+        background-size: cover;
+      width: 100%;
+      min-height: 100vh;  */
+}
+.history-rep{
+    padding-top: 10px;
+    color: black;
+}
+.history-title{
+    position: absolute;
+    top:50%;
+    left:77%;
+    color:aquamarine;
+    transform:translate(-50%,-50%);
+}
+.history-user{
+    position: absolute;
+    top:60%;
+    left:77%;
+    color:aquamarine;
+    transform:translate(-50%,-50%);
+    color: rgb(22, 243, 169);
+}
+.his-img{
+    width:600px;
+    height:500px;
+}
+.history-pics{
+    display: grid;
+   grid-template-columns: auto auto;
+   justify-content: space-evenly;
+}
+.his-left{
+    position: absolute;
+    top:50%;
+    left:15%;
+   
+    transform:translate(-50%,-50%);
+    color: rgb(22, 243, 169);
+}
+.history-list{
+    margin:10%;
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    justify-content: space-around;
+}
+.report-item{
+    padding-left: 200px;
+    margin-bottom: 100px;
+    border:2px solid aquamarine;
+    box-shadow: 10px 12px 16px 17px rgba(111, 110, 110, 0.717);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+th{
+    color:rgb(6, 77, 53);
+   font-size: 18px;
+   padding-left: 5px;
+}
+td{
+    color:  rgb(71, 247, 188);
+    font-size: 16px;
+    padding-left: 5px;
+}
+.key{
+    font-weight: 800;
+}
+.value{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(71, 247, 188);
+  font-size: 16px;
+}
+.prev-his{
+    position: relative;
+    text-align: center;
+   padding-top: 20px;
+    color: rgb(6, 176, 136);
+}

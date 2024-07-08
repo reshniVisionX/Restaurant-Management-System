@@ -1,0 +1,176 @@
+.orderpg{
+    margin-top: 15%;
+    margin-bottom: 10%;
+<<<<<<< HEAD
+}
+.order-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  
+  .order-summary {
+   margin-top: 100px;;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+    width:50%;
+    top:50%;
+    left:50%;
+    position:relative;
+    transform:translate(-50%,-50%);
+    box-shadow: 10px 12px 16px 17px rgba(111, 110, 110, 0.717);
+  }
+  
+  .order-summary h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .orders-table th, .orders-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .orders-table th {
+    background-color: #f0f0f0;
+  }
+  
+  .generate-bill {
+    margin-top: 5%;
+    flex: 0 0 300px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    width:50%;
+    top:50%;
+    left:50%;
+    position:relative;
+    transform:translate(-50%,-50%);
+    box-shadow: 10px 12px 16px 17px rgba(111, 110, 110, 0.717);
+  }
+  
+  .my-meals {
+    margin-bottom: 20px;
+    
+  }
+  
+  .my-meals h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .pay-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .pay-btn:hover {
+    background-color: aquamarine;
+  }
+  
+
+
+   .v-dish_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    
+  }
+  
+  .myorder-category {
+    width: 100%; 
+    margin-bottom: 20px;
+  }
+  
+  .myorder-dish {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 55%; 
+    justify-content: center;
+   
+  }
+  
+  .myorder-dish-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+  
+  .myorder-desc {
+    flex: 1;
+  }
+  
+  .myorder-dish-name {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .myorder-dish-rate {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .myorder-dish-rating {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .myorder-rating-pic {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+  }
+  
+  .myorder-shop {
+    display: flex;
+    align-items: center;
+  }
+  
+  .myorder-dish-count {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .myorder-shop-btn {
+    margin-left: 10px;
+  }
+  
+  .myorder-shop-btn button {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .myorder-shop-btn button:hover {
+    background-color: #0056b3;
+  }
+  
+=======
+}
+>>>>>>> origin/main

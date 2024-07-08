@@ -1,0 +1,48 @@
+.table.available {
+  border: 5px solid green;
+  color: green;
+  }
+  
+  .table.unavailable {
+    border: 5px solid red;
+    color: red;
+  }
+  .orders{
+    margin-top:10%;
+  }
+  .orders-title{
+    text-align: center;
+    color: rgb(19, 239, 166);
+  }
+  .order-table{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    justify-content: space-around;
+    justify-items:center; 
+    align-items: center;
+   
+    
+  }
+  .table{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border :5px solid gray;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 20px;
+    transition: background-color 0.3s;
+
+  }
+  .table-pic{
+    width: 300px;
+<<<<<<< HEAD
+    height: 260px;
+=======
+    height: 300px;
+>>>>>>> origin/main
+  }

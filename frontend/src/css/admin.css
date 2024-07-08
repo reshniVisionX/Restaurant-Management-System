@@ -1,0 +1,147 @@
+.admin{
+    margin-top: 10%;
+}
+fieldset {
+    width: 70%;
+    margin: 0 auto; 
+    border-radius: 5px;
+    border-color: aquamarine;
+    border-width: 4px;
+    box-shadow: 2px 3px 5px 6px rgb(190, 188, 188);
+  }
+  legend{
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(10, 220, 150);
+    border: 2px solid rgb(163, 254, 229);
+  }
+.package-crud{
+    display: grid;
+    justify-content: space-around;
+    text-align: center;
+    grid-template-columns: auto auto;
+    width:70%;
+    margin: 50px auto;
+}
+.admin-title{
+    text-align: center;
+    color: rgb(50, 2, 79);
+}
+.package-create{
+    padding: 30px;
+    border-radius: 7px;
+    border-width: 6px;
+    border-color: rgb(101, 99, 99);
+    background-color: rgb(15, 219, 15);
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: 4px 6px  gray;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.package-update{
+    padding: 30px;
+    border-radius: 7px;
+    border-width: 6px;
+    border-color: rgb(101, 99, 99);
+    background-color: rgb(41, 231, 244);
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: 4px 6px  gray;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.package-delete{
+    padding: 30px;
+    border-radius: 7px;
+    border-width: 6px;
+    border-color: rgb(101, 99, 99);
+    background-color: rgb(247, 75, 41);
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: 4px 6px  gray;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.package-view{
+    padding: 30px;
+    border-radius: 7px;
+    border-width: 6px;
+    border-color: rgb(101, 99, 99);
+    background-color: rgb(239, 249, 52);
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: 4px 6px  gray;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.booked-package{
+    display: flex;
+    padding: 30px;
+    border-radius: 7px;
+    border-width: 6px;
+    border-color: rgb(101, 99, 99);
+    background-color: rgb(239, 39, 225);
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: 4px 6px  gray;
+    margin-bottom: 20px;
+    justify-content: center;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.booked-feedback{
+    display: flex;
+    padding: 30px;
+    border-radius: 7px;
+    border-width: 6px;
+    border-color: rgb(101, 99, 99);
+    background-color: rgb(33, 240, 157);
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: 4px 6px  gray;
+    margin-bottom: 20px;
+    justify-content: center;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: transform 0.3s ease
+}
+.booked-histories{
+    display: flex;
+    padding: 30px;
+    border-radius: 7px;
+    border-width: 6px;
+    border-color: rgb(101, 99, 99);
+    background-color: rgb(251, 157, 49);
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: 4px 6px  gray;
+    margin-bottom: 20px;
+    justify-content: center;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: transform 0.3s ease
+}
+.booked-package:hover,.package-view:hover,.package-delete:hover,
+.package-update:hover,.package-create:hover,.booked-feedback:hover{
+    transform: scale(0.9);
+}
