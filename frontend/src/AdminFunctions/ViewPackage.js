@@ -1,30 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './adminfunctions.css';
-<<<<<<< HEAD
 import './view.css'
-=======
->>>>>>> origin/main
 const BASE_URL = 'http://localhost:4000';
 
 const ViewPackage = () => {
   const [dishes, setDishes] = useState([]);
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
-=======
->>>>>>> origin/main
 
   useEffect(() => {
     const fetchDishes = async () => {
       try {
         const response = await fetch(`${BASE_URL}/admin/dishes`, {
-<<<<<<< HEAD
           credentials: 'include',
           headers: {
             Authorization: `Bearer ${token}`
           }
-=======
-          credentials: 'include'
->>>>>>> origin/main
         });
         const data = await response.json();
         setDishes(data);
@@ -36,7 +26,6 @@ const ViewPackage = () => {
     fetchDishes();
   }, []);
 
-<<<<<<< HEAD
   const renderDish = (dish) => {
     if (!dish.category) return null;
 
@@ -61,87 +50,6 @@ const ViewPackage = () => {
       <h1>View All Dishes</h1>
       <div className='view-dish-list'>
         {dishes.map(renderDish)}
-=======
-  return (
-    <div className='view_dish'>
-      <h1>View All Dishes</h1>
-      <div className='dish_list'>
-        {dishes.map((dish, index) => (
-          <fieldset key={index}>
-            {dish.category === 'Appetizers' && (
-              <div className='dish1'>
-                <legend>Appetizers</legend>
-                <img src={`images/${dish.image}`} alt={dish.name} />
-                <h3>Dish Name: {dish.name}</h3>
-                <h3>Item ID: {dish.item_id}</h3>
-                <h3>Rate: {dish.rate}</h3>
-                <h3>Quantity: {dish.quantity}</h3>
-                <h3>Rating: {dish.rating}</h3>
-              </div>
-            )}
-
-            {dish.category === 'Main Courses' && (
-              <div className='dish2'>
-                <legend>Main Courses</legend>
-                <img src={`images/${dish.image}`} alt={dish.name} />
-                <h3>Dish Name: {dish.name}</h3>
-                <h3>Item ID: {dish.item_id}</h3>
-                <h3>Rate: {dish.rate}</h3>
-                <h3>Quantity: {dish.quantity}</h3>
-                <h3>Rating: {dish.rating}</h3>
-              </div>
-            )}
-
-            {dish.category === 'Snacks' && (
-              <div className='dish3'>
-                <legend>Snacks</legend>
-                <img src={`images/${dish.image}`} alt={dish.name} />
-                <h3>Dish Name: {dish.name}</h3>
-                <h3>Item ID: {dish.item_id}</h3>
-                <h3>Rate: {dish.rate}</h3>
-                <h3>Quantity: {dish.quantity}</h3>
-                <h3>Rating: {dish.rating}</h3>
-              </div>
-            )}
-
-            {dish.category === 'Desserts' && (
-              <div className='dish4'>
-                <legend>Desserts</legend>
-                <img src={`images/${dish.image}`} alt={dish.name} />
-                <h3>Dish Name: {dish.name}</h3>
-                <h3>Item ID: {dish.item_id}</h3>
-                <h3>Rate: {dish.rate}</h3>
-                <h3>Quantity: {dish.quantity}</h3>
-                <h3>Rating: {dish.rating}</h3>
-              </div>
-            )}
-
-            {dish.category === 'Beverages' && (
-              <div className='dish5'>
-                <legend>Beverages</legend>
-                <img src={`images/${dish.image}`} alt={dish.name} />
-                <h3>Dish Name: {dish.name}</h3>
-                <h3>Item ID: {dish.item_id}</h3>
-                <h3>Rate: {dish.rate}</h3>
-                <h3>Quantity: {dish.quantity}</h3>
-                <h3>Rating: {dish.rating}</h3>
-              </div>
-            )}
-
-            {dish.category === 'Grilled Items' && (
-              <div className='dish6'>
-                <legend>Grilled Items</legend>
-                <img src={`images/${dish.image}`} alt={dish.name} />
-                <h3>Dish Name: {dish.name}</h3>
-                <h3>Item ID: {dish.item_id}</h3>
-                <h3>Rate: {dish.rate}</h3>
-                <h3>Quantity: {dish.quantity}</h3>
-                <h3>Rating: {dish.rating}</h3>
-              </div>
-            )}
-          </fieldset>
-        ))}
->>>>>>> origin/main
       </div>
     </div>
   );

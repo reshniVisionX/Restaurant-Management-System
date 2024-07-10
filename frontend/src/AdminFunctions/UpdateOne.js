@@ -12,28 +12,17 @@ const UpdateOne = () => {
     rating: 0,
     image: null,
   });
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
-=======
->>>>>>> origin/main
 
   useEffect(() => {
     const fetchDish = async () => {
       try {
         const response = await fetch(`http://localhost:4000/admin/dishes/search/${item_id}`, {
-<<<<<<< HEAD
           credentials: 'include',headers:{  Authorization: `Bearer ${token}`}
         });
         if (response.ok) {
           const data = await response.json();
           setDish(data.dish); 
-=======
-          credentials: 'include'
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setDish(data.dish); // Assuming data structure returns { dish: { ... } }
->>>>>>> origin/main
           setFormData({
             name: data.dish.name,
             rate: data.dish.rate,
@@ -81,12 +70,9 @@ const UpdateOne = () => {
         method: 'PATCH',
         credentials: 'include',
         body: formDataToSend,
-<<<<<<< HEAD
         headers:{
             Authorization: `Bearer ${token}`
         }
-=======
->>>>>>> origin/main
       });
 
       if (response.ok) {

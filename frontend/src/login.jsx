@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import {  useNavigate } from 'react-router-dom';
 
-=======
-import React, { useState,useEffect } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
-//import axios from 'axios';
->>>>>>> origin/main
 import './css/login.css';
 
 const BASE_URL = 'http://localhost:4000';
@@ -27,24 +21,6 @@ const Login = () => {
     }));
   };
 
-<<<<<<< HEAD
-=======
-  // useEffect(() => {
-  //   fetch(`${BASE_URL}/`, {
-  //     credentials: 'include'
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data);
-  //       if (data.valid) {
-  //         navigate('/');
-  //       } else {
-  //         navigate('/login');
-  //       }
-  //     })
-  //     .catch(err => console.log(err));
-  // }, [navigate]);
->>>>>>> origin/main
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,13 +37,9 @@ const Login = () => {
       .then(data => {
         console.log(data);
         if (data.message === 'Login successful') {
-<<<<<<< HEAD
           const token = data.token;
           localStorage.setItem('authToken', token);
           console.log('Login successful');
-=======
-          console.log("Login success");
->>>>>>> origin/main
           if (data.isAdmin) {
             navigate('/admin');
           } else {
@@ -75,11 +47,7 @@ const Login = () => {
           }
         } else {
           console.log("Invalid credentials");
-<<<<<<< HEAD
           setErrorMessage(data.message);
-=======
-          setErrorMessage('Invalid credentials');
->>>>>>> origin/main
         }
       })
       .catch(err => {

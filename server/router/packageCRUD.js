@@ -93,10 +93,6 @@ router.get('/dishes', async (req, res) => {
       res.status(500).json({ error: 'Failed to delete dish' });
     }
   });
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
   router.get('/dishes/search/:item_id', async (req, res) => {
     const { item_id } = req.params;
     console.log(item_id);
@@ -163,32 +159,13 @@ router.get('/dishes', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
-<<<<<<< HEAD
-=======
-router.patch('/dishes/orderOne/:item_id', async (req, res) => {
- 
-  const { item_id } = req.params;
-  console.log("decrementing id ",item_id);
+router.get('/tables', async (req, res) => {
   try {
-    const dish = await Dish.findOne({ item_id: parseInt(item_id, 10) });
-    console.log(dish);
-    if (!dish) {
-      return res.status(404).json({ error: 'Dish not found' });
-    }
-
-    if (dish.quantity <= 0) {
-      return res.status(400).json({ error: 'Dish quantity is already zero' });
-    }
-
-    dish.quantity -= 1;
-    await dish.save();
-
-    res.status(200).json({ message: 'Dish quantity decremented successfully' });
-  } catch (error) {
-    console.error('Error decrementing dish quantity:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    const tables = await Table.find();
+    res.json(tables);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 });
->>>>>>> origin/main
+
 module.exports = router;

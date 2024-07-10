@@ -3,8 +3,8 @@ import './css/signup.css';
 import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:4000'; // Set base URL for Axios requests
-axios.defaults.withCredentials = true; // Enable sending cookies with cross-origin requests
+axios.defaults.baseURL = 'http://localhost:4000'; 
+axios.defaults.withCredentials = true; 
 
 
 const Register = () => {
@@ -20,10 +20,7 @@ const Register = () => {
     .then((res) => {
         if(res.data.Status==="success"){
           console.log("Registration success");
-<<<<<<< HEAD
           console.log(res.data.token);
-=======
->>>>>>> origin/main
              Navigate('/login');
         }else{
              alert("Error : in navigting to login page")

@@ -10,7 +10,6 @@ router.use((req, res, next) => {
     next();
 });
 
-<<<<<<< HEAD
 router.patch('/:tno', async (req, res) => {
    
   const { tno } = req.params;
@@ -63,32 +62,6 @@ router.patch('/update/:tno', async (req, res) => {
   
 });
 
-=======
-
-
-  router.patch('/:tno', async (req, res) => {
-   
-    const { tno } = req.params;
-    console.log("Setting false for ",tno)
-    const { status, orders, total } = req.body;
-  
-    try {
-      const updatedTable = await Table.findOneAndUpdate(
-        { tno: tno },
-        { status: status, orders: orders, total: total },
-        { new: true }
-      );
-  
-      if (!updatedTable) {
-        return res.status(404).json({ message: 'Table not found' });
-      }
-  
-      res.json(updatedTable);
-    } catch (err) {
-      res.status(500).json({ message: err.message });
-    }
-  });
->>>>>>> origin/main
   
   router.patch('/clear/:tno', async (req, res) => {
     const { tno } = req.params;

@@ -21,14 +21,10 @@ const UserSchema = new Schema({
     required: true,
     minlength: 4,
     maxlength: 255,
-<<<<<<< HEAD
   }
 },{
     timestamps:true,
   
-=======
-  },
->>>>>>> origin/main
 });
 
 module.exports = mongoose.model('User', UserSchema);

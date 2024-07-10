@@ -43,13 +43,10 @@
     font-size: medium;
     
 }
-<<<<<<< HEAD
 .form-group{
     margin-left: 10%;
     width:70%;
 }
-=======
->>>>>>> origin/main
 .add_btn{
     width:5%;
     border:2px solid rgb(114, 9, 170);
@@ -115,17 +112,12 @@
     text-align: left;
     margin-bottom: 20px;;
     padding-left: 70px;
-<<<<<<< HEAD
     border-radius: 2px solid rgb(53, 244, 180);
-=======
-    border-radius: 2px solid aquamarine;
->>>>>>> origin/main
     box-shadow: 10px 12px 16px 17px rgba(111, 110, 110, 0.717);
 }
 .hist-title{
     padding: 100px;;
 }
-<<<<<<< HEAD
 .reports-item {
     border: 1px solid #ccc;
     margin-bottom: 20px;
@@ -135,22 +127,10 @@
     width:70%;
     box-shadow: 1px 12px 15px 15px rgba(111, 110, 110, 0.717);
     margin-bottom: 50px;
-=======
-.reports-list{
-   display:flex;
-   flex-direction: column;
-   justify-content: space-around;
-   margin:5%;
-}
-.reports-item{
-    display: flex;
-    flex-direction: row;
->>>>>>> origin/main
     top:50%;
     left:50%;
     position: relative;
     transform: translate(-50%,-50%);
-<<<<<<< HEAD
   }
   
   .reports-first, .reports-last {
@@ -180,24 +160,6 @@
     background-color: #ddd;
   }
   
-=======
-    width:70%;
-    margin-bottom: 4%;;
-    box-shadow: 10px 12px 13px 15px rgba(111, 110, 110, 0.717);
-}
-.reports-first{
-  flex:1;
-  padding-top: 40px;
-  padding-bottom: 40px;
- 
-}
-.reports-last{
-    padding-top: 40px;
-    padding-bottom: 40px;
-  flex:1;
-  display: flex;
-}
->>>>>>> origin/main
 .search-button{
  display: grid;
  margin-top: 3%;

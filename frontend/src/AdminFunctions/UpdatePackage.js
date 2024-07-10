@@ -7,24 +7,16 @@ const UpdateDish = () => {
   const [searchName, setSearchName] = useState('');
   const [dishes, setDishes] = useState([]);
   const navigate = useNavigate();
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
   
-=======
-
->>>>>>> origin/main
   useEffect(() => {
     const fetchDishes = async () => {
       try {
         const response = await fetch('http://localhost:4000/admin/dishes', {
-<<<<<<< HEAD
           credentials: 'include',
           headers:{
              Authorization: `Bearer ${token}`
           }
-=======
-          credentials: 'include'
->>>>>>> origin/main
         });
         const data = await response.json();
         setDishes(data);
@@ -38,7 +30,6 @@ const UpdateDish = () => {
 
   const handleIdSearch = async () => {
     try {
-<<<<<<< HEAD
     
       const response = await fetch(`http://localhost:4000/admin/dishes/search/${searchId}`, {
         method: 'GET',
@@ -49,9 +40,6 @@ const UpdateDish = () => {
         credentials: 'include'
       });
   
-=======
-      const response = await fetch(`http://localhost:4000/admin/dishes/search/${searchId}`);
->>>>>>> origin/main
       if (response.ok) {
         const data = await response.json();
         console.log(data);
@@ -63,7 +51,6 @@ const UpdateDish = () => {
       console.error('Error fetching dish by ID:', error);
     }
   };
-<<<<<<< HEAD
   
   const handleNameSearch = async () => {
     try {
@@ -77,12 +64,6 @@ const UpdateDish = () => {
         credentials: 'include'
       });
   
-=======
-
-  const handleNameSearch = async () => {
-    try {
-      const response = await fetch(`http://localhost:4000/admin/dishes/search/name/${searchName}`);
->>>>>>> origin/main
       if (response.ok) {
         const data = await response.json();
         console.log(data);
@@ -95,10 +76,7 @@ const UpdateDish = () => {
     }
   };
   
-<<<<<<< HEAD
   
-=======
->>>>>>> origin/main
   const handleSubmit = (id) => {
     navigate(`/updateOne/${id}`);
   };

@@ -1,11 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../model/register');
-<<<<<<< HEAD
 const jwt = require('jsonwebtoken');
-=======
-const session = require('express-session');
->>>>>>> origin/main
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 require('dotenv').config();
@@ -20,18 +16,14 @@ router.use((req, res, next) => {
   next();
 });
 
-<<<<<<< HEAD
 const createToken=(_id)=>{
   return jwt.sign({_id: _id},process.env.JWT_SECRET,{ expiresIn: '1d' })
 }
 
-=======
->>>>>>> origin/main
 router.post('/registers', async(req, res) => {
     const { name, email, password } = req.body;
   
     try {
-<<<<<<< HEAD
       if(!name || !email || !password){
         res.status(400).json({ error: 'All fields must be filled' });
       }
@@ -46,16 +38,6 @@ router.post('/registers', async(req, res) => {
       const savedUser = await user.save();
       console.log("saved user into db ",savedUser);
       res.json({Status:"success",token});
-=======
-      const newUser = new User({ name, email, password });
-      await newUser.validate();
-
-      const hashedPassword = await bcrypt.hash(password, 10); // Salt rounds: 10
-      const user = new User({ name, email, password: hashedPassword });
-      const savedUser = await user.save();
-      console.log("saved into db");
-      res.json({Status:"success"});
->>>>>>> origin/main
     } catch (error) {
      
       if (error.name === 'ValidationError') {
@@ -70,15 +52,10 @@ router.post('/registers', async(req, res) => {
     }
   });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
   router.post('/login', async (req, res) => {
     const { email, password } = req.body;
   
     try {
-<<<<<<< HEAD
       
       if (!email || !password) {
         console.log("Email or password field is empty");
@@ -114,38 +91,11 @@ router.post('/registers', async(req, res) => {
       const token = createToken(user._id);
       console.log("Login successful for user:", user.email);
       res.json({ message: 'Login successful', login: true, isAdmin: false, token });
-=======
-      const user = await User.findOne({ email });
-      if (!user) {
-        return res.status(401).json({ error: 'Invalid credentials' });
-      }
-
-      if (email === process.env.ADMIN_EMAIL &&  password === process.env.ADMIN_PASSWORD)  {
-        req.session.userData = { name: user.name, email: user.email };
-        res.cookie('userData', { name: user.name, email: user.email }, { httpOnly: true });
-        return res.json({ message: 'Login successful', login: true, isAdmin: true });
-      }
-  
-      const isPasswordValid = await bcrypt.compare(password, user.password);
-  
-      if (!isPasswordValid) {
-        return res.status(401).json({ error: 'Invalid credentials' });
-      }
-  
-      req.session.userData = { name: user.name, email: user.email };
-      res.cookie('userData', { name: user.name, email: user.email }, { httpOnly: true });
-      res.json({ message: 'Login successful', login: true, isAdmin: false });
->>>>>>> origin/main
     } catch (err) {
       console.error('Error:', err);
       res.status(500).json({ error: 'Failed to login' });
     }
   });
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> origin/main
   router.post('/logout', (req, res) => {
   
     req.session.destroy(err => {
@@ -156,11 +106,7 @@ router.post('/registers', async(req, res) => {
       
         res.clearCookie('connect.sid');
         res.clearCookie('userData'); 
-<<<<<<< HEAD
       
-=======
-  
->>>>>>> origin/main
         res.json({ success: true });
       }
     });

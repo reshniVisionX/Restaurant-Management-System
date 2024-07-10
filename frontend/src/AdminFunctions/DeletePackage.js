@@ -3,25 +3,16 @@ import './adminfunctions.css';
 
 const DeleteDish = () => {
   const [dishes, setDishes] = useState([]);
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
  
-=======
-
-  // Function to fetch dishes from the server
->>>>>>> origin/main
   useEffect(() => {
     const fetchDishes = async () => {
       try {
         const response = await fetch('http://localhost:4000/admin/dishes', {
-<<<<<<< HEAD
           credentials: 'include',
           headers:{
               Authorization: `Bearer ${token}`
           }
-=======
-          credentials: 'include'
->>>>>>> origin/main
         });
         const data = await response.json();
         setDishes(data);
@@ -33,15 +24,10 @@ const DeleteDish = () => {
     fetchDishes();
   }, []);
 
-<<<<<<< HEAD
-=======
-  // Function to handle dish deletion
->>>>>>> origin/main
   const handleDelete = async (itemId) => {
     try {
       const response = await fetch(`http://localhost:4000/admin/dishes/${itemId}`, {
         method: 'DELETE',
-<<<<<<< HEAD
         credentials: 'include',
         headers:{
             Authorization: `Bearer ${token}`
@@ -49,12 +35,6 @@ const DeleteDish = () => {
       });
       if (response.ok) {
         
-=======
-        credentials: 'include'
-      });
-      if (response.ok) {
-        // Remove the deleted dish from the state
->>>>>>> origin/main
         setDishes(dishes.filter(dish => dish.item_id !== itemId));
         alert('Dish deleted successfully!');
       } else {

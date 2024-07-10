@@ -8,7 +8,6 @@ axios.defaults.withCredentials = true;
 const Navbar = () => {
   const [name, setName] = useState('');
   const navigate = useNavigate();
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
 
   axios.defaults.withCredentials = true;
@@ -55,41 +54,6 @@ axios.get('/', {
       console.error('Error:', err);
     });
 };
-=======
-
-  axios.defaults.withCredentials = true;
-
-  useEffect(()=>{
-    axios.get('/')
-    .then(res =>{
-      console.log(res);
-     if(res.data.valid){
-        setName(res.data.name);
-     }else{
-      navigate('/login');
-     }
-    })
-    .catch(err => console.log(err));
-  },[]);
-
-  const handleLogout = () => {
-    
-    axios.post('/logout')
-      .then(res => {
-        if (res.data.success) {
-      
-          setName('');
-          navigate('/login');
-          alert('You are logged out successfully...');
-        } else {
-          console.log('Logout failed');
-        }
-      })
-      .catch(err => {
-        console.error('Error:', err);
-      });
-  };
->>>>>>> origin/main
   
   return (
     <section className='navbar'>

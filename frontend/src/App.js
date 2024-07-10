@@ -18,7 +18,7 @@ import History from './components/History';
 import OrderPage from './components/OrderPage';
 import Feedback from './AdminFunctions/Feedback';
 import Histories from './AdminFunctions/Histories';
-
+import NotFound from './components/404page';
 
 function App() {
 
@@ -42,6 +42,7 @@ function App() {
         <Route path='/histories' element={<Histories/>}>  </Route>
         <Route path={`/updateOne/:item_id`} element={<UpdateOne />} />
         <Route path={`/myorder/:tb_no`} element={<OrderPage />} />
+        <Route path="*" element={<NotFound />} /> 
       </Routes>
       <Footer/>
    </BrowserRouter>

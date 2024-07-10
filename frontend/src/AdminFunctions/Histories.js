@@ -6,10 +6,7 @@ const BASE_URL = 'http://localhost:4000';
 const Histories = () => {
   const [reports, setReports] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
-=======
->>>>>>> origin/main
 
   useEffect(() => {
     fetchAllReports();
@@ -17,15 +14,11 @@ const Histories = () => {
 
   const fetchAllReports = async () => {
     try {
-<<<<<<< HEAD
-      const response = await axios.get(`${BASE_URL}/reports/all`, { withCredentials: true ,
+      const response = await axios.get(`${BASE_URL}admin/reports/all`, { withCredentials: true ,
         headers:{
             Authorization: `Bearer ${token}`
         }
       });
-=======
-      const response = await axios.get(`${BASE_URL}/reports/all`, { withCredentials: true });
->>>>>>> origin/main
       setReports(response.data);
     } catch (error) {
       console.error('Error fetching reports:', error);
@@ -34,15 +27,11 @@ const Histories = () => {
 
   const fetchReportsByName = async (name) => {
     try {
-<<<<<<< HEAD
-      const response = await axios.get(`${BASE_URL}/reports/name/${name}`, { withCredentials: true ,
+      const response = await axios.get(`${BASE_URL}admin/reports/name/${name}`, { withCredentials: true ,
         headers:{
             Authorization: `Bearer ${token}`
         }
       });
-=======
-      const response = await axios.get(`${BASE_URL}/reports/name/${name}`, { withCredentials: true });
->>>>>>> origin/main
       setReports(response.data);
     } catch (error) {
       console.error('Error fetching reports by name:', error);
@@ -51,13 +40,9 @@ const Histories = () => {
 
   const fetchReportsByEmail = async (email) => {
     try {
-<<<<<<< HEAD
-      const response = await axios.get(`${BASE_URL}/reports/email/${email}`, { withCredentials: true,
+      const response = await axios.get(`${BASE_URL}admin/reports/email/${email}`, { withCredentials: true,
         headers:{  Authorization: `Bearer ${token}`}
        });
-=======
-      const response = await axios.get(`${BASE_URL}/reports/email/${email}`, { withCredentials: true });
->>>>>>> origin/main
       setReports(response.data);
     } catch (error) {
       console.error('Error fetching reports by email:', error);
@@ -66,30 +51,22 @@ const Histories = () => {
 
   const fetchReportsByDate = async (date) => {
     try {
-<<<<<<< HEAD
      
       const formattedDate = new Date(date).toISOString(); 
   
-      const response = await axios.get(`${BASE_URL}/reports/date/${formattedDate}`, {
+      const response = await axios.get(`${BASE_URL}admin/reports/date/${formattedDate}`, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${token}`
         }
       });
   
-=======
-      const response = await axios.get(`${BASE_URL}/reports/date/${date}`, { withCredentials: true });
->>>>>>> origin/main
       setReports(response.data);
     } catch (error) {
       console.error('Error fetching reports by date:', error);
     }
   };
-<<<<<<< HEAD
   
-=======
-
->>>>>>> origin/main
   const handleFetchByName = () => {
     if (searchTerm) {
       fetchReportsByName(searchTerm);
@@ -128,7 +105,6 @@ const Histories = () => {
         <button  onClick={handleFetchByDate}>Search by Date</button>
         </div>
       </div>
-<<<<<<< HEAD
       <h1 className='hist-title'>Histories</h1><br/><br/>
       <div className="reports-list">
   {reports.map((report) => (
@@ -166,33 +142,6 @@ const Histories = () => {
   ))}
 </div>
 
-=======
-      <h1 className='hist-title'>Histories</h1>
-      <div className="reports-list">
-        {reports.map((report) => (
-          <div key={report._id} className="reports-item">
-            <div className='reports-first'>
-              <p><strong>Name:</strong> {report.name}</p>
-              <p><strong>Email:</strong> {report.email_id}</p>
-              <p><strong>Date:</strong> {new Date(report.date).toLocaleDateString()}</p>
-              <p><strong>Time:</strong> {report.time}</p>
-              <p><strong>Table No:</strong> {report.tableNo}</p>
-              <p><strong>Total:</strong> ₹ {report.total}</p>
-            </div>
-            <div className='reports-last'>
-              <p><strong>Orders:</strong></p>
-              <ul>
-                {report.orders.map((order, index) => (
-                  <li key={index}>
-                    {order.quantity} x {order.dish} - ₹ {order.price}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
-      </div>
->>>>>>> origin/main
     </div>
   );
 };

@@ -1,0 +1,18 @@
+
+.not-found-container {
+    text-align: center;
+    margin-top: 20%;
+  }
+  
+  .not-found-container h1 {
+    font-size: 4rem;
+    color: #333;
+  }
+  
+  .not-found-container p {
+    font-size: 1.5rem;
+    color: aquamarine;
+  }
+  .pgnotfound{
+    color:aquamarine;
+  }

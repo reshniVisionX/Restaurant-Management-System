@@ -9,7 +9,6 @@ const BASE_URL = 'http://localhost:4000';
 const Home = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
   useEffect(() => {
   
@@ -19,11 +18,6 @@ const Home = () => {
         Authorization: `Bearer ${token}`
       }
     })
-=======
-
-  useEffect(() => {
-    axios.get(`${BASE_URL}/userData`, { withCredentials: true })
->>>>>>> origin/main
       .then(res => {
         const userData = res.data;
         if (userData.email && userData.name) {
@@ -44,17 +38,12 @@ const Home = () => {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-<<<<<<< HEAD
         const response = await fetch(`${BASE_URL}/api/dishes`, {
           method: 'GET', 
           credentials: 'include',
           headers: {
             Authorization: `Bearer ${token}`
           }
-=======
-        const response = await fetch(`${BASE_URL}/admin/dishes`, {
-          credentials: 'include'
->>>>>>> origin/main
         });
         const data = await response.json();
         setDishes(data);
@@ -66,26 +55,7 @@ const Home = () => {
     fetchDishes();
   }, []);
 
-<<<<<<< HEAD
  
-=======
-  const groupedDishes = dishes.reduce((acc, dish) => {
-    if (!acc[dish.category]) {
-      acc[dish.category] = [];
-    }
-    acc[dish.category].push(dish);
-    return acc;
-  }, {});
-
-  const categories = [
-    'Appetizers',
-    'Main Courses',
-    'Snacks',
-    'Desserts',
-    'Beverages',
-    'Grilled Items'
-  ];
->>>>>>> origin/main
 
   return (
     <div className='homepg'>
@@ -116,7 +86,6 @@ const Home = () => {
 
       <h1 className='dishes-list'>View All Dishes</h1>
       <div className='dish_list'>
-<<<<<<< HEAD
  
     <div className='home-dish' >
       {dishes.map((dish, index) => (
@@ -131,28 +100,6 @@ const Home = () => {
   <br />
 </div>
 </div>
-=======
-        {categories.map(category => (
-          <fieldset key={category}>
-            <legend className='leg'>{category}</legend>
-            {groupedDishes[category] && groupedDishes[category].map((dish, index) => (
-              <div className={`dish${index + 1}`} key={dish.item_id} >
-                <div className='dish-grp'>
-                <img src={`images/${dish.image}`} alt={dish.name} className='dish-img' />
-                <div className='desc'>
-                <h3 className='dish-name'> {dish.name}</h3>
-                <h3 className='dish-rate'> ₹ {dish.rate}</h3>
-                <h3 className='dish-rating'><img src = "https://icon2.cleanpng.com/20180422/kew/kisspng-star-golden-stars-5add5465f24541.9545710215244545019924.jpg" alt="star" className='rating-pic' /> {dish.rating}</h3>
-                </div>
-              </div>
-              </div> 
-            ))}
-           
-          </fieldset> 
-        ))}<br/>
-      </div>
-    </div>
->>>>>>> origin/main
   );
 };
 

@@ -10,10 +10,7 @@ const Contact = () => {
   });
 
   const [responseMessage, setResponseMessage] = useState('');
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
-=======
->>>>>>> origin/main
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,7 +22,6 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-<<<<<<< HEAD
       const response = await axios.post(
         'http://localhost:4000/api/feedback',
         formData,
@@ -36,11 +32,6 @@ const Contact = () => {
           }
         }
       );
-=======
-      const response = await axios.post('http://localhost:4000/api/feedback', formData, {
-        withCredentials: true
-      });
->>>>>>> origin/main
       setResponseMessage(response.data.message);
       setFormData({
         name: '',

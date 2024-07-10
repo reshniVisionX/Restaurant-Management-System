@@ -11,10 +11,7 @@ const CreateDish = () => {
     rating: '',
     image: null,
   });
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
-=======
->>>>>>> origin/main
 
   const handleFileChange = (e) => {
     const { name, files } = e.target;
@@ -49,12 +46,9 @@ const CreateDish = () => {
         method: 'POST',
         body: data,
         credentials: 'include',
-<<<<<<< HEAD
         headers:{
             Authorization: `Bearer ${token}`
         }
-=======
->>>>>>> origin/main
       });
       const result = await response.json();
       console.log(result);

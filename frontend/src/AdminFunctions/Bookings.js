@@ -6,23 +6,16 @@ const BASE_URL = 'http://localhost:4000';
 
 const Bookings = () => {
   const [tables, setTables] = useState([]);
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
-=======
->>>>>>> origin/main
 
   useEffect(() => {
     const fetchTables = async () => {
       try {
-<<<<<<< HEAD
-        const response = await axios.get(`${BASE_URL}/tables`, { withCredentials: true,
+        const response = await axios.get(`${BASE_URL}/admin/tables`, { withCredentials: true,
           headers:{
               Authorization: `Bearer ${token}`
           }
          });
-=======
-        const response = await axios.get(`${BASE_URL}/tables`, { withCredentials: true });
->>>>>>> origin/main
         setTables(response.data);
       } catch (error) {
         console.error('Error fetching tables:', error);

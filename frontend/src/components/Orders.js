@@ -7,22 +7,16 @@ const BASE_URL = 'http://localhost:4000';
 const Orders = () => {
   const navigate = useNavigate();
   const [tables, setTables] = useState([]);
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
-=======
->>>>>>> origin/main
 
   useEffect(() => {
     const fetchTables = async () => {
       try {
         const response = await fetch(`${BASE_URL}/tables`, {
           credentials: 'include', 
-<<<<<<< HEAD
           headers:{
              Authorization: `Bearer ${token}`
           }
-=======
->>>>>>> origin/main
         });
 
         if (!response.ok) {
@@ -53,10 +47,7 @@ const Orders = () => {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
-<<<<<<< HEAD
              Authorization: `Bearer ${token}`
-=======
->>>>>>> origin/main
           },
           credentials: 'include', 
           body: JSON.stringify({ status: false }),
@@ -88,16 +79,11 @@ const Orders = () => {
             style={{ border: '1px solid black', padding: '20px', cursor: 'pointer' }}
             onClick={() => handleOrder(tab.tno)}
           >
-<<<<<<< HEAD
            <img
             src={tab.status ? "https://i.pinimg.com/564x/c3/9c/56/c39c56bc405dde5bfd4a92cfdb22f4fd.jpg" : "https://i.pinimg.com/564x/30/15/24/3015248a0b9442da47d5e1bf57da7b50.jpg"}
             alt={tab.status ? 'available' : 'reserved'}
             className='table-pic' />
            <h2>Table : {tab.tno}</h2>
-=======
-            <img src="pictures/premium.jpg" alt='table' className='table-pic' />
-            <h2>Table : {tab.tno}</h2>
->>>>>>> origin/main
           </div>
         ))}
       </div>

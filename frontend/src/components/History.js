@@ -8,7 +8,6 @@ const History = () => {
   const [user, setUser] = useState(null);
   const [reports, setReports] = useState([]);
   const navigate = useNavigate();
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
 
   useEffect(() => {
@@ -17,11 +16,6 @@ const History = () => {
          Authorization: `Bearer ${token}`
       }
      })
-=======
-
-  useEffect(() => {
-    axios.get(`${BASE_URL}/userData`, { withCredentials: true })
->>>>>>> origin/main
       .then(res => {
         const userData = res.data;
         if (userData.email && userData.name) {
@@ -41,12 +35,8 @@ const History = () => {
   const fetchReports = (name, email) => {
     axios.get(`${BASE_URL}/reports/user`, { 
         params: { name, email }, 
-<<<<<<< HEAD
         withCredentials: true ,
         headers:{ Authorization: `Bearer ${token}`}
-=======
-        withCredentials: true 
->>>>>>> origin/main
       })
       .then(res => {
         setReports(res.data);

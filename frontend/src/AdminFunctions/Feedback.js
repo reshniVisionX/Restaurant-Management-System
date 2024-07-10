@@ -4,10 +4,7 @@ import './adminfunctions.css';
 
 const Feedback = () => {
   const [feedbackList, setFeedbackList] = useState([]);
-<<<<<<< HEAD
   const token = localStorage.getItem('authToken');
-=======
->>>>>>> origin/main
 
   useEffect(() => {
     fetchFeedback();
@@ -19,12 +16,8 @@ const Feedback = () => {
         method: 'GET',
         credentials: 'include',
         headers: {
-<<<<<<< HEAD
           'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
-=======
-          'Content-Type': 'application/json'
->>>>>>> origin/main
         }
       });
       if (!response.ok) {

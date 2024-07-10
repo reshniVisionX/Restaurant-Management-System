@@ -56,11 +56,7 @@
 
    box-shadow: 2px 2px 8px 8px rgba(111, 110, 110, 0.717);
 }
-<<<<<<< HEAD
  .dishes-list{
-=======
-.dishes-list{
->>>>>>> origin/main
     padding-top: 10px;
     color: black;
     text-shadow: 2px 2px rgb(162, 215, 186);
@@ -68,7 +64,6 @@
     justify-content: center; 
     align-items: center; 
 }
-<<<<<<< HEAD
 
 
 .dish_list {
@@ -112,45 +107,3 @@
     }
   }
   
-=======
-.leg{
-    padding: 10px;
-    color: rgb(38, 244, 175);
-    font-size: 20px;
-    margin-bottom: 10%;
-}
-.dish-grp{
-    display: flex;
-    justify-content: space-around;
-    text-align: left;
-    flex-direction: row;
-    padding-left: 50px;
-    padding-top: 20px;
-}
-.dish-img{
-    flex:1;
-  width:200px;
-  height:200px;
-  padding: 5px 30px;
-}
-.desc{
-    flex:2;
-    padding-left: 50px;
-    padding-top: 20px;
-}
-.rating-pic{
-    width:20px;
-    height:20px;
-}
-.dish-name{
-  color:rgb(57, 9, 230)
-}
-
-.dish-rate{
-  color:green;
-}
-
-.dish-rating{
-  color:rgb(211, 211, 12);
-}
->>>>>>> origin/main

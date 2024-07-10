@@ -4,10 +4,7 @@ import '../css/admin.css';
 
 const Admin = () => {
   const navigate = useNavigate();
-<<<<<<< HEAD
   
-=======
->>>>>>> origin/main
   return (
     <div className='admin'>
         <h1 className='admin-title'>Welcome to admin page</h1>
