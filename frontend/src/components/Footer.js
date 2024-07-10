@@ -19,7 +19,7 @@ const Footer = () => {
               <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
-          <div className="footer-section">
+          <div className="footer-section address">
             <h2>Contact Us</h2>
             <p>Email: info@savorgreen.com</p>
             <p>Phone: +123 456 7890</p>

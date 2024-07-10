@@ -18,6 +18,7 @@ import History from './components/History';
 import OrderPage from './components/OrderPage';
 import Feedback from './AdminFunctions/Feedback';
 import Histories from './AdminFunctions/Histories';
+import Payment from './components/PaymentPage';
 import NotFound from './components/404page';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path='/viewpack' element={<View/>}>  </Route>
         <Route path='/booking' element={<Booking/>}>  </Route>
         <Route path='/feedback' element={<Feedback/>}>  </Route>
+        <Route path={`/payment/:total`} element={<Payment/>}>  </Route>
         <Route path='/histories' element={<Histories/>}>  </Route>
         <Route path={`/updateOne/:item_id`} element={<UpdateOne />} />
         <Route path={`/myorder/:tb_no`} element={<OrderPage />} />

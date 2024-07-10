@@ -120,7 +120,7 @@ const OrderPage = () => {
   }
 };
 
-  const generateBill = async () => {
+  const generateBill = async (total) => {
     try {
       const response = await fetch(`${BASE_URL}/reports`, {
         method: 'POST',
@@ -143,9 +143,8 @@ const OrderPage = () => {
         throw new Error('Error generating bill');
       }else{
         console.log(response);
-        alert("You payment successfull ...Thankyou .. we welcome u again");
-      }
 
+        navigate(`/payment/${total}`);
       await fetch(`${BASE_URL}/tables/clear/${tb_no}`, {
         method: 'PATCH',
         headers: {
@@ -155,11 +154,14 @@ const OrderPage = () => {
         body: JSON.stringify({ status: true, orders: [], total: 0 })
       });
 
-      navigate('/'); 
+     
+    }
     } catch (error) {
       console.error('Error generating bill:', error);
     }
+    
   };
+
 
   const categories = [
     'Appetizers',
@@ -237,7 +239,7 @@ const OrderPage = () => {
         <div className='my-meals'>
           <h3>Total : ₹ {total}</h3>
         </div>
-        <button type="button" className='pay-btn' onClick={generateBill}>
+        <button type="button" className='pay-btn' onClick={()=>generateBill(total)}>
           Proceed to Payment
         </button>
       </div>
