@@ -103,3 +103,12 @@ justify-content: center;
     color: white;
     font-size: 16px;
 }
+.error-messages {
+    margin-top: 10px;
+    color: red;
+  }
+  
+  .error-message {
+    margin-bottom: 5px;
+  }
+  

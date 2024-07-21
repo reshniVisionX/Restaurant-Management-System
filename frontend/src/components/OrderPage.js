@@ -182,34 +182,42 @@ const OrderPage = () => {
 
   return (
     <div className='orderpg'>
+       <h1 className='dishes-list'>Make your Instant Orders</h1>
+             <div className='image-gallery'>
+    <div className='image-item'>
+      <img src='/pictures/img1 (2).jpg' alt='Image1' />
+    </div>
+    <div className='image-item'>
+      <img src='/pictures/pic2.jpg' alt='Image2' />
+    </div>
+    <div className='image-item'>
+      <img src='/pictures/dwn.jpg' alt='Image3' />
+    </div>
+    </div>
       <h1 className='dishes-list'>View All Dishes</h1>
       <div className='v-dish_list'>
-        {categories.map(category => (
-          <div key={category} className={`myorder-category myorder-${category.toLowerCase().replace(/\s+/g, '-')}`}>
-            {groupedDishes[category] && groupedDishes[category].map((dish, index) => (
-              <div className='myorder-dish' key={dish.item_id}>
-              
-                <img src={`/images/${dish.image}`} alt={dish.name} className='myorder-dish-img' />
-                <div className='myorder-desc'>
-                  <h3 className='myorder-dish-name'>{dish.name}</h3>
-                  <h3 className='myorder-dish-rate'> ₹ {dish.rate}</h3>
-                  <h3 className='myorder-dish-rating'>
-                    <img src="https://icon2.cleanpng.com/20180422/kew/kisspng-star-golden-stars-5add5465f24541.9545710215244545019924.jpg" alt="star" className='myorder-rating-pic' />
-                    {dish.rating}
-                  </h3>
-                </div>
-                <div className='myorder-shop'>
-                  <h3 className='myorder-dish-count'> {dish.quantity}
-                    <span className='myorder-shop-btn'>
-                      <button type='button' onClick={() => Increment(dish.item_id)}> + </button>
-                    </span>
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        ))}
+  {dishes.map(dish => (
+    <div className='myorder-dish' key={dish.item_id}>
+      <img src={`/images/${dish.image}`} alt={dish.name} className='myorder-dish-img' />
+      <div className='myorder-desc'>
+        <h3 className='myorder-dish-name'>{dish.name}</h3>
+        <h3 className='myorder-dish-rate'> ₹ {dish.rate}</h3>
+        <h3 className='myorder-dish-rating'>
+          <img src="https://icon2.cleanpng.com/20180422/kew/kisspng-star-golden-stars-5add5465f24541.9545710215244545019924.jpg" alt="star" className='myorder-rating-pic' />
+          {dish.rating}
+        </h3>
       </div>
+      <div className='myorder-shop'>
+        <h3 className='myorder-dish-count'> {dish.quantity }
+          <span className='myorder-shop-btn'>
+            <button type='button' onClick={() => Increment(dish.item_id)}> + </button>
+          </span>
+        </h3>
+      </div>
+    </div>
+  ))}
+</div>
+
       
       <div className='order-summary'>
         <h2>Order Summary</h2>
