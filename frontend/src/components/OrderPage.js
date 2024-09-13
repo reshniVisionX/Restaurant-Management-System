@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import '../css/myOrder.css';
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = process.env.BASE_URL;
 
 const OrderPage = () => {
   const { tb_no } = useParams();
@@ -192,22 +192,7 @@ const OrderPage = () => {
   };
 
 
-  const categories = [
-    'Appetizers',
-    'Main Courses',
-    'Snacks',
-    'Desserts',
-    'Beverages',
-    'Grilled Items'
-  ];
 
-  const groupedDishes = dishes.reduce((acc, dish) => {
-    if (!acc[dish.category]) {
-      acc[dish.category] = [];
-    }
-    acc[dish.category].push(dish);
-    return acc;
-  }, {});
 
   return (
     <div className='orderpg'>

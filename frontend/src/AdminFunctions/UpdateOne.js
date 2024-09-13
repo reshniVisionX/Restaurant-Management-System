@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './adminfunctions.css';
+const BASE_URL = process.env.BASE_URL;
 
 const UpdateOne = () => {
   const { item_id } = useParams();
@@ -17,7 +18,7 @@ const UpdateOne = () => {
   useEffect(() => {
     const fetchDish = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/admin/dishes/search/${item_id}`, {
+        const response = await fetch(`${BASE_URL}/admin/dishes/search/${item_id}`, {
           credentials: 'include',headers:{  Authorization: `Bearer ${token}`}
         });
         if (response.ok) {
@@ -66,7 +67,7 @@ const UpdateOne = () => {
       formDataToSend.append('rating', formData.rating);
       if (formData.image) formDataToSend.append('uploadImage', formData.image);
 
-      const response = await fetch(`http://localhost:4000/admin/dishes/updateOne/${item_id}`, {
+      const response = await fetch(`${BASE_URL}/admin/dishes/updateOne/${item_id}`, {
         method: 'PATCH',
         credentials: 'include',
         body: formDataToSend,

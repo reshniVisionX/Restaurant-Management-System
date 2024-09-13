@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import './css/login.css';
 
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = process.env.BASE_URL;
 
 const Login = () => {
   const navigate = useNavigate();

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../css/contact.css'; 
+const BASE_URL = process.env.BASE_URL;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:4000/api/feedback',
+        `${BASE_URL}/api/feedback`,
         formData,
         {
           withCredentials: true,

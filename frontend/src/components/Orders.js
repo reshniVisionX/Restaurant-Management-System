@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/order.css';
 
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = process.env.BASE_URL;
 
 const Orders = () => {
   const navigate = useNavigate();

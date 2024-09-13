@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import '../css/Homepg.css';
 
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = process.env.BASE_URL;
 
 const Home = () => {
   const [user, setUser] = useState(null);
@@ -30,7 +30,7 @@ const Home = () => {
 
   const fetchFeedback = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/feedback', {
+      const response = await fetch(`${BASE_URL}/api/feedback`, {
         method: 'GET',
         credentials: 'include',
         headers: {

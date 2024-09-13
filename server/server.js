@@ -16,9 +16,9 @@ const adminReport = require('./router/AdminRoutes')
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:3000', // Allow requests from this origin
-    methods: ['GET', 'POST', 'DELETE', 'PATCH', 'PUT'], // Allow specific HTTP methods
-    credentials: true, // Enable sending cookies from frontend
+    origin: process.env.ORIGIN_URL,
+    methods: ['GET', 'POST', 'DELETE', 'PATCH', 'PUT'], 
+    credentials: true, 
 }));
 
 app.use(express.json());
@@ -26,11 +26,11 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(session({
     secret: 'secret',
-    resave: false, //if no modification done
+    resave: false, 
     saveUninitialized: false,
     cookie: {
-        secure: false, //cause we dont use https
-        maxAge: 1000 * 60 * 60 * 24, //=one day
+        secure: false, 
+        maxAge: 1000 * 60 * 60 * 24, 
     }
 }));
 

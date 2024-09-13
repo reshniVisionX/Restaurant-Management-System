@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './adminfunctions.css'; 
+const BASE_URL = process.env.BASE_URL;
 
 const Feedback = () => {
   const [feedbackList, setFeedbackList] = useState([]);
@@ -12,7 +13,7 @@ const Feedback = () => {
 
   const fetchFeedback = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/feedback', {
+      const response = await fetch(`${BASE_URL}/api/feedback`, {
         method: 'GET',
         credentials: 'include',
         headers: {

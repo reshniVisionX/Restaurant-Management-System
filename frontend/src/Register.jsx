@@ -3,7 +3,7 @@ import './css/signup.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:4000'; 
+axios.defaults.baseURL =  process.env.BASE_URL;
 axios.defaults.withCredentials = true; 
 
 const Register = () => {

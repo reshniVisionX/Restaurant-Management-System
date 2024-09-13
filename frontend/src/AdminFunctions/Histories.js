@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = process.env.BASE_URL;
 
 const Histories = () => {
   const [reports, setReports] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredReports, setFilteredReports] = useState([]); // To store the filtered reports
+  const [filteredReports, setFilteredReports] = useState([]);
   const token = localStorage.getItem('authToken');
 
   useEffect(() => {

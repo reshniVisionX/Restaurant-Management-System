@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './adminfunctions.css';
+const BASE_URL = process.env.BASE_URL;
 
 const DeleteDish = () => {
   const [dishes, setDishes] = useState([]);
@@ -8,7 +9,7 @@ const DeleteDish = () => {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-        const response = await fetch('http://localhost:4000/admin/dishes', {
+        const response = await fetch(`${BASE_URL}/admin/dishes`, {
           credentials: 'include',
           headers:{
               Authorization: `Bearer ${token}`
@@ -26,7 +27,7 @@ const DeleteDish = () => {
 
   const handleDelete = async (itemId) => {
     try {
-      const response = await fetch(`http://localhost:4000/admin/dishes/${itemId}`, {
+      const response = await fetch(`${BASE_URL}/admin/dishes/${itemId}`, {
         method: 'DELETE',
         credentials: 'include',
         headers:{

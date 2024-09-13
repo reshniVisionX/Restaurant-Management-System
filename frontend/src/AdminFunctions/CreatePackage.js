@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './adminfunctions.css';
+const BASE_URL = process.env.BASE_URL;
 
 const CreateDish = () => {
   const [formData, setFormData] = useState({
@@ -42,7 +43,7 @@ const CreateDish = () => {
     data.append('image', formData.image);
     
     try {
-      const response = await fetch('http://localhost:4000/admin/createdish', {
+      const response = await fetch(`${BASE_URL}/admin/createdish`, {
         method: 'POST',
         body: data,
         credentials: 'include',

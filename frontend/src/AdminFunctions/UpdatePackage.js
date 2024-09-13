@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './adminfunctions.css';
+const BASE_URL = process.env.BASE_URL;
 
 const UpdateDish = () => {
   const [searchId, setSearchId] = useState('');
@@ -12,7 +13,7 @@ const UpdateDish = () => {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-        const response = await fetch('http://localhost:4000/admin/dishes', {
+        const response = await fetch(`${BASE_URL}/admin/dishes`, {
           credentials: 'include',
           headers:{
              Authorization: `Bearer ${token}`
@@ -31,7 +32,7 @@ const UpdateDish = () => {
   const handleIdSearch = async () => {
     try {
     
-      const response = await fetch(`http://localhost:4000/admin/dishes/search/${searchId}`, {
+      const response = await fetch(`${BASE_URL}/admin/dishes/search/${searchId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +56,7 @@ const UpdateDish = () => {
   const handleNameSearch = async () => {
     try {
       
-      const response = await fetch(`http://localhost:4000/admin/dishes/search/name/${searchName}`, {
+      const response = await fetch(`${BASE_URL}/admin/dishes/search/name/${searchName}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

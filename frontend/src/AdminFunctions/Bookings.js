@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './adminfunctions.css';
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:4000'; 
+const BASE_URL = process.env.BASE_URL;
 
 const Bookings = () => {
   const [tables, setTables] = useState([]);

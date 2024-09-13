@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './adminfunctions.css';
 import './view.css'
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = process.env.BASE_URL;
 
 const ViewPackage = () => {
   const [dishes, setDishes] = useState([]);
