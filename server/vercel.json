@@ -11,16 +11,10 @@
         "use": "@vercel/static"
       }
     ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/"
-      }
-    ],
     "rewrites": [
       {
         "source": "/(.*)",
-        "destination": "/index.html"
+        "destination": "/src/index.js"
       }
     ]
   }
