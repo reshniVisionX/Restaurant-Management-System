@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './adminfunctions.css';
 import axios from 'axios';
 
-const BASE_URL = process.env.BASE_URL;
-
 const Bookings = () => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [tables, setTables] = useState([]);
   const token = localStorage.getItem('authToken');
 

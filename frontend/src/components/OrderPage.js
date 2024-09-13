@@ -3,9 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import '../css/myOrder.css';
 import axios from 'axios';
 
-const BASE_URL = process.env.BASE_URL;
-
 const OrderPage = () => {
+  const BASE_URL =   process.env.REACT_APP_BASE_URL
   const { tb_no } = useParams();
   console.log("orderpage", tb_no);
   const navigate = useNavigate();

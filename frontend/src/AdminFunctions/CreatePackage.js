@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './adminfunctions.css';
-const BASE_URL = process.env.BASE_URL;
+
 
 const CreateDish = () => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [formData, setFormData] = useState({
     item_id: '',
     category: '',

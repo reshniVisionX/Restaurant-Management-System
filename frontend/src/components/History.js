@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../css/History.css';
-const BASE_URL = process.env.BASE_URL;
 
 const History = () => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [user, setUser] = useState(null);
   const [reports, setReports] = useState([]);
   const navigate = useNavigate();

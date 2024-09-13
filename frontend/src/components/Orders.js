@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/order.css';
 
-const BASE_URL = process.env.BASE_URL;
-
 const Orders = () => {
+  const BASE_URL =   process.env.REACT_APP_BASE_URL
   const navigate = useNavigate();
   const [tables, setTables] = useState([]);
   const token = localStorage.getItem('authToken');

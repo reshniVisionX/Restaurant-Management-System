@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 import './css/login.css';
 
-const BASE_URL = process.env.BASE_URL;
-
 const Login = () => {
+  
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
+  console.log(BASE_URL)
   const navigate = useNavigate();
   const [values, setValues] = useState({
     email: '',

@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './adminfunctions.css';
-const BASE_URL = process.env.BASE_URL;
 
 const UpdateOne = () => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const { item_id } = useParams();
   const [dish, setDish] = useState(null);
   const [formData, setFormData] = useState({

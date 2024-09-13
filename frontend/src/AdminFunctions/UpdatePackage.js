@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './adminfunctions.css';
-const BASE_URL = process.env.BASE_URL;
 
 const UpdateDish = () => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [searchId, setSearchId] = useState('');
   const [searchName, setSearchName] = useState('');
   const [dishes, setDishes] = useState([]);

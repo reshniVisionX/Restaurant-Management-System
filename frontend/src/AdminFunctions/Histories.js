@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const BASE_URL = process.env.BASE_URL;
 
 const Histories = () => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [reports, setReports] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredReports, setFilteredReports] = useState([]);

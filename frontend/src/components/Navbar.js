@@ -2,10 +2,12 @@ import React,{useEffect,useState} from 'react'
 import '../css/navbar.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-axios.defaults.baseURL =  process.env.BASE_URL;
+
 axios.defaults.withCredentials = true; 
 
 const Navbar = () => {
+ 
+  axios.defaults.baseURL =   process.env.REACT_APP_BASE_URL;
   const [name, setName] = useState('');
   const navigate = useNavigate();
   const token = localStorage.getItem('authToken');

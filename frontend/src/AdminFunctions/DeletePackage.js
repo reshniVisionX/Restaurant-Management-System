@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './adminfunctions.css';
-const BASE_URL = process.env.BASE_URL;
+
 
 const DeleteDish = () => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [dishes, setDishes] = useState([]);
   const token = localStorage.getItem('authToken');
  

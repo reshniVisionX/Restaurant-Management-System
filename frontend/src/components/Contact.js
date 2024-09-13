@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../css/contact.css'; 
-const BASE_URL = process.env.BASE_URL;
 
 const Contact = () => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [formData, setFormData] = useState({
     name: '',
     email: '',

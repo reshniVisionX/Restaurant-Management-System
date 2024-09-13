@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './adminfunctions.css'; 
-const BASE_URL = process.env.BASE_URL;
+
 
 const Feedback = () => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const [feedbackList, setFeedbackList] = useState([]);
   const token = localStorage.getItem('authToken');
 
