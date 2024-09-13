@@ -42,3 +42,24 @@
     width: 300px;
     height: 260px;
   }
+
+  .search-bars{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+  }
+  .ordersearch{
+    border-radius: 5px;
+    border-color: aquamarine;
+    width:260px;
+    height: 30px;
+  }
+
+  .dropdown{
+    border-color: aquamarine;
+    width:200px;
+  }
+

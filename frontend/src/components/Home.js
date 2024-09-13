@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,8 +10,45 @@ const Home = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const token = localStorage.getItem('authToken');
+  const [feedbackList, setFeedbackList] = useState([]);
+
+  const scrollContainerRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 350; 
+      scrollContainerRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   useEffect(() => {
-  
+    fetchFeedback();
+  }, []);
+
+  const fetchFeedback = async () => {
+    try {
+      const response = await fetch('http://localhost:4000/api/feedback', {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+        }
+      });
+      if (!response.ok) {
+        throw new Error('Error fetching feedback');
+      }
+      const data = await response.json();
+      setFeedbackList(data);
+    } catch (error) {
+      console.error('Error fetching feedback:', error);
+    }
+  };
+
+  useEffect(() => {
     axios.get(`${BASE_URL}/userData`, {
       withCredentials: true,
       headers: {
@@ -21,17 +58,22 @@ const Home = () => {
       .then(res => {
         const userData = res.data;
         if (userData.email && userData.name) {
-          setUser(userData);
+          setUser(userData); 
         } else {
           console.log("Not yet logged in", res);
-          navigate('/login');
+          navigate('/login');  
         }
       })
       .catch(err => {
-        console.error('Error fetching user data:', err);
-        navigate('/login');
+        if (err.response && err.response.status === 401) {
+          console.log("User is not logged in, redirecting to login.");
+        } else {
+          console.error('Error fetching user data:', err);
+        }
+        navigate('/login');  
       });
-  }, [navigate]);
+  }, [navigate, token]);  
+  
 
   const [dishes, setDishes] = useState([]);
 
@@ -84,21 +126,30 @@ const Home = () => {
       </div>
       <br />
 
-      <h1 className='dishes-list'>View All Dishes</h1>
-      <div className='dish_list'>
- 
-    <div className='home-dish' >
-      {dishes.map((dish, index) => (
-        <div className='dish-item' key={dish.item_id}>
-          <div className='dish-grp'>
-            <img src={`images/${dish.image}`} alt={dish.name} className='dish-img' />
-          </div>
-        </div>
-      ))}
+
+     <div className='myhotel'>
+     <img src="pictures/cafe.jpg" alt="img1" style={{ width: '340px', height: '300px' }} />
+      <img src="pictures/tomato.jpg" alt="img1" style={{ width: '450px', height: '300px' }} />
+      <img src="pictures/toy.jpg" alt="img1" style={{ width: '450px', height: '300px' }} />
     </div>
- 
-  <br />
-</div>
+
+    <div className='ourCustomer'>
+      <h1 className='feedTitle'>Our Customers' Feedback</h1>
+      <div className='scroll-container'>
+        <button className='arrow left' onClick={() => scroll('left')}>&lt;</button>
+        <div className='scroll-review' ref={scrollContainerRef}>
+          {feedbackList.map((feed, index) => (
+            <div className='feedback-item' key={index}>
+              <h3>{feed.name}</h3>
+              <p>{feed.message}</p>
+              <b><strong>Date:</strong> {new Date(feed.date).toLocaleDateString()}</b>
+            </div>
+          ))}
+        </div>
+        <button className='arrow right' onClick={() => scroll('right')}>&gt;</button>
+      </div>
+    </div>
+    <img src='pictures/cup.jpg' className="lastpic" alt='logo' />
 </div>
   );
 };

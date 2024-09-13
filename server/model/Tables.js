@@ -4,15 +4,10 @@ const tableSchema = new mongoose.Schema({
   tno: Number,
   status: Boolean,
   orders: [{ dish: String, quantity: Number, price: Number }],
-  total: Number,
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: 'User'
-  }
+  total: Number
 }, 
 {
-  timestamps: true 
+  timestamps: true // This is where the timestamps option goes
 });
 
 module.exports = mongoose.model('Table', tableSchema);

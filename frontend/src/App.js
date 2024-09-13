@@ -20,6 +20,8 @@ import Feedback from './AdminFunctions/Feedback';
 import Histories from './AdminFunctions/Histories';
 import Payment from './components/PaymentPage';
 import NotFound from './components/404page';
+import ProtectedRoutes from './utils/ProtectedRoute';
+import AdminRoutes from './utils/AdminRoute'
 
 function App() {
 
@@ -30,20 +32,28 @@ function App() {
       <Route path='/' element={<Home/>}>  </Route>
         <Route path='/register' element={<Register/>}>  </Route>
         <Route path='/login' element={<Login/>}>  </Route>
+      
+        <Route element={<AdminRoutes/>}>
         <Route path='/admin' element={<Admin/>}>  </Route>
-        <Route path='/order' element={<Orders />}>  </Route>
-        <Route path='/contact' element={<Contact/>}>  </Route>
-        <Route path='/history' element={<History/>}></Route>
         <Route path='/createpack' element={<Create/>}>  </Route>
         <Route path='/updatepack' element={<Update/>}>  </Route>
         <Route path='/deletepack' element={<Delete/>}>  </Route>
         <Route path='/viewpack' element={<View/>}>  </Route>
         <Route path='/booking' element={<Booking/>}>  </Route>
-        <Route path='/feedback' element={<Feedback/>}>  </Route>
+        </Route>
+        
+        <Route element={<ProtectedRoutes/>}>
+        <Route path='/order' element={<Orders />}>  </Route>
+        <Route path='/contact' element={<Contact/>}>  </Route>
+        <Route path='/history' element={<History/>}></Route>
         <Route path={`/payment/:total`} element={<Payment/>}>  </Route>
         <Route path='/histories' element={<Histories/>}>  </Route>
         <Route path={`/updateOne/:item_id`} element={<UpdateOne />} />
         <Route path={`/myorder/:tb_no`} element={<OrderPage />} />
+        <Route path='/feedback' element={<Feedback/>}>  </Route>
+        
+        </Route>
+
         <Route path="*" element={<NotFound />} /> 
       </Routes>
       <Footer/>

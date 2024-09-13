@@ -47,8 +47,8 @@ const Contact = () => {
   return (
     <div className="contact">
       <div className="contact-container">
-        <h1>Contact Us</h1>
-        <p>We'd love to hear from you! Please reach out with any questions or feedback.</p>
+        <h1>Post your Feedback</h1>
+        <p>We'd love to hear from you! Please reach out with any issues in dishes.</p>
         <div className="contact-details">
           <div className="contact-item">
             <h3>Address</h3>

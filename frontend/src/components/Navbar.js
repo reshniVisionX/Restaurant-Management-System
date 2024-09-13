@@ -58,7 +58,7 @@ axios.get('/', {
   return (
     <section className='navbar'>
     <div className='nav-section1'>
-    <img src='pictures/log.jpg' className="logo" alt='logo' />
+    <img src='pictures/logos.jpg' className="logo" alt='logo' />
     <div className='nav-page'>Savor Green</div>
     </div>
     <div className='nav-section2'>

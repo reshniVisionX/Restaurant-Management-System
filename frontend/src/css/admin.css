@@ -142,6 +142,6 @@ fieldset {
     transition: transform 0.3s ease
 }
 .booked-package:hover,.package-view:hover,.package-delete:hover,
-.package-update:hover,.package-create:hover,.booked-feedback:hover{
+.package-update:hover,.package-create:hover,.booked-feedback:hover,.booked-histories:hover{
     transform: scale(0.9);
 }

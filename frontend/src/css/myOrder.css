@@ -67,7 +67,7 @@
 
 
 .pay-btn {
-  background-color: #007bff;
+  background-color: #1ef7d6;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -77,7 +77,7 @@
 }
 
 .pay-btn:hover {
-  background-color: #0056b3;
+  background-color: #16e6f9;
 }
 
 .v-dish_list {
@@ -177,4 +177,10 @@
 .image-item:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.invoice-img{
+  width:300px;
+  height: 300px;
+  box-shadow: 4px 4px gray;
 }

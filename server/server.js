@@ -13,7 +13,6 @@ const bodyParser = require('body-parser');
 const authMiddleware = require('./middleware/AuthMiddleware');
 const authAdmin = require('./middleware/AuthAdmin')
 const adminReport = require('./router/AdminRoutes')
-
 const app = express();
 
 app.use(cors({
@@ -45,11 +44,11 @@ con.on('open', () => {
 });
 
 app.use('/admin',  authAdmin,adminFunctions);
-app.use('/admin', authAdmin,adminReport);
+app.use('/admin/reports', authAdmin,adminReport);
 app.use('/api',authMiddleware,dishes);
 app.use('/tables', authMiddleware, Table); 
 app.use('/reports', authMiddleware, Reports);
-app.use('/api', authAdmin, Feedback); 
+app.use('/api', authMiddleware,Feedback); 
 app.use(authentication);
 
 app.listen(4000, () => {

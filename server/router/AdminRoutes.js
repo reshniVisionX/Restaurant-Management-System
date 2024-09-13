@@ -4,7 +4,6 @@ const session = require('express-session');
 const cors = require('cors');
 require('dotenv').config();
 const Report = require('../model/Report')
-const Table = require('../model/Tables');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
 const path = require('path');
@@ -19,17 +18,6 @@ router.use((req, res, next) => {
     next();
 });
 
-
-
-
-router.get('/tables', async (req, res) => {
-    try {
-      const tables = await Table.find();
-      res.json(tables);
-    } catch (err) {
-      res.status(500).json({ message: err.message });
-    }
-  });
 
     
   router.get('/email/:email', async (req, res) => {

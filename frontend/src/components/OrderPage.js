@@ -13,6 +13,10 @@ const OrderPage = () => {
   const [dishes, setDishes] = useState([]);
   const [orders, setOrders] = useState({ tno: tb_no, status: false, orders: [] });
   const [total, setTotal] = useState(0);
+  const [filteredDishes, setFilteredDishes] = useState([]);
+  const [name, setName] = useState(''); 
+  const [category, setCategory] = useState(''); 
+  const [rate, setRate] = useState(''); 
   const token = localStorage.getItem('authToken');
 
   useEffect(() => {
@@ -52,6 +56,7 @@ const OrderPage = () => {
         const data = await response.json();
         console.log(data);
         setDishes(data);
+        setFilteredDishes(data);
       } catch (error) {
         console.error('Error fetching dishes:', error);
       }
@@ -59,6 +64,30 @@ const OrderPage = () => {
 
     fetchDishes();
   }, []);
+
+
+  useEffect(() => {
+    let filtered = dishes;
+
+    if (name) {
+      filtered = filtered.filter(dish => 
+        dish.name && dish.name.toLowerCase().includes(name.toLowerCase())
+      );
+    }
+    
+
+    if (category) {
+      filtered = filtered.filter(dish => dish.category === category);
+    }
+
+    if (rate) {
+      filtered = filtered.filter(dish => dish.rate <= rate);
+    }
+
+    setFilteredDishes(filtered);
+
+  }, [name, category, rate, dishes]); 
+
 
   const Increment = async(item_id) => {
     const dish = dishes.find(d => d.item_id === item_id);
@@ -195,28 +224,70 @@ const OrderPage = () => {
     </div>
     </div>
       <h1 className='dishes-list'>View All Dishes</h1>
+
+      <div className="search-bars">
+        <input
+          type="text" className='ordersearch'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Search by name"
+        />
+
+        <select  className='dropdown'
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="">Select Category</option>
+          <option value="Appetizers">Appetizers</option>
+          <option value="Main Courses">Main Courses</option>
+          <option value="Snacks">Snacks</option>
+          <option value="Desserts">Desserts</option>
+          <option value="Beverages">Beverages</option>
+          <option value="Grilled Items">Grilled Items</option>
+        </select>
+
+        <input 
+          type="number" className='ordersearch'
+          value={rate}
+          onChange={(e) => setRate(e.target.value)}
+          placeholder="Search by rate (less than)"
+        />
+      </div>
+
+   
+
       <div className='v-dish_list'>
-  {dishes.map(dish => (
-    <div className='myorder-dish' key={dish.item_id}>
-      <img src={`/images/${dish.image}`} alt={dish.name} className='myorder-dish-img' />
-      <div className='myorder-desc'>
-        <h3 className='myorder-dish-name'>{dish.name}</h3>
-        <h3 className='myorder-dish-rate'> ₹ {dish.rate}</h3>
-        <h3 className='myorder-dish-rating'>
-          <img src="https://icon2.cleanpng.com/20180422/kew/kisspng-star-golden-stars-5add5465f24541.9545710215244545019924.jpg" alt="star" className='myorder-rating-pic' />
-          {dish.rating}
-        </h3>
+  {filteredDishes.length > 0 ? (
+   filteredDishes.map(dish => (
+      <div className='myorder-dish' key={dish.item_id}>
+        <img src={`/images/${dish.image}`} alt={dish.name} className='myorder-dish-img' />
+        <div className='myorder-desc'>
+          <h3 className='myorder-dish-name'>{dish.name}</h3>
+          <h3 className='myorder-dish-rate'> ₹ {dish.rate}</h3>
+          <h3 className='myorder-dish-rating'>
+            <img 
+              src="https://icon2.cleanpng.com/20180422/kew/kisspng-star-golden-stars-5add5465f24541.9545710215244545019924.jpg" 
+              alt="star" 
+              className='myorder-rating-pic' 
+            />
+            {dish.rating}
+          </h3>
+        </div>
+        <div className='myorder-shop'>
+          <h3 className='myorder-dish-count'> 
+            {dish.quantity}
+            <span className='myorder-shop-btn'>
+              <button type='button' onClick={() => Increment(dish.item_id)}> + </button>
+            </span>
+          </h3>
+        </div>
       </div>
-      <div className='myorder-shop'>
-        <h3 className='myorder-dish-count'> {dish.quantity }
-          <span className='myorder-shop-btn'>
-            <button type='button' onClick={() => Increment(dish.item_id)}> + </button>
-          </span>
-        </h3>
-      </div>
-    </div>
-  ))}
+    ))
+  ) : (
+    <p>No matching dishes found</p>
+  )}
 </div>
+
 
       
       <div className='order-summary'>

@@ -27,7 +27,7 @@
   }
   
   .pay-button {
-    background-color: #007bff;
+    background-color: #05f4bce0;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -38,11 +38,11 @@
   }
   
   .pay-button:hover {
-    background-color: #1dd66a;
+    background-color: #0cefff;
     transform: scale(1.1); 
   }
   .amount{
-    color: rgb(7, 161, 110);
+    color: rgb(11, 239, 163);
     border-radius: 3px;
   }
   .pin{
@@ -50,4 +50,10 @@
     height: 20px;
     color: #1dd66a;
     text-decoration-color: #1dd66a;
+  }
+
+  .pay-img{
+    width: 200px;
+    height: 200px;
+    box-shadow: 4px 4px gray;
   }

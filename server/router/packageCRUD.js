@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const Table = require('../model/Tables');
 
 router.use(cookieParser());
 router.use(cors());
@@ -159,9 +160,11 @@ router.get('/dishes', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
 router.get('/tables', async (req, res) => {
   try {
     const tables = await Table.find();
+    console.log(tables);
     res.json(tables);
   } catch (err) {
     res.status(500).json({ message: err.message });

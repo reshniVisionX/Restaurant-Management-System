@@ -119,13 +119,19 @@ router.post('/login', async (req, res) => {
   
   
 
-router.get('/userData', (req, res) => {
-  const connectSid = req.cookies['connect.sid'];
-  const userDataCookie = req.cookies['userData'];
-  console.log('connect.sid:', connectSid);
-  console.log(userDataCookie);
-  res.json({ name: userDataCookie.name, email: userDataCookie.email });
-});
+  router.get('/userData', (req, res) => {
+    const connectSid = req.cookies['connect.sid'];
+    const userDataCookie = req.cookies['userData'];
+  
+    if (!userDataCookie || !userDataCookie.name || !userDataCookie.email) {
+      console.log('User not logged in, or user data is missing.');
+      return res.status(401).json({ error: 'Not logged in' });
+    }
+  
+    console.log('connect.sid:', connectSid);
+    res.json({ name: userDataCookie.name, email: userDataCookie.email });
+  });
+  
 
   router.get('/',(req,res)=>{
     const userDataCookie = req.cookies['userData'];
